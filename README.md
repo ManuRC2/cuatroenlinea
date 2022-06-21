@@ -1,64 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Cuatro en linea
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto es una adaptación del juego 4 en linea realizada con PHP en el framework Laravel.
 
-## About Laravel
+## Dependencias
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Para poder iniciar el proyecto es necesario tener instalado Docker(https://docs.docker.com/desktop/) y DDEV(https://ddev.readthedocs.io/en/stable/). Simplemente seguir las instrucciones tal y como estan en la documentación linkeada.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Instalación
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Descarga del proyecto
 
-## Learning Laravel
+Esto podemos hacerlo simplemente con este comando donde querramos crear la carpeta con los contenidos:
+```shell
+git clone https://github.com/ManuRC2/cuatroenlinea
+```
+Alternativamente, si no se tiene GIT instalado, se puede descargar manualmente el código desde esta página de Github.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Independientemente de como se haga esto, luego debemos navegar a la carpeta del proyecto en cuestión con la consola.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Configuración del proyecto
 
-## Laravel Sponsors
+Una vez descargado, comenzaremos a ejecutar una serie de comandos necesarios para que el proyecto este bien configurado y listo para ser iniciado.
+Primero que nada, vamos a correr el siguiente comando:
+```shell
+ddev config
+```
+Esto nos llevará por una configuración basica del proyecto, donde podremos modificar el nombre del mismo, el tipo de proyecto del que se trata y la ubicación del docroot. Podemos simplemente dejar vacías todas estas opciones para que se elijan las opciones predeterminadas.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Ahora tenemos que instalar composer en el proyecto con este comando:
+```shell
+ddev composer install
+```
 
-### Premium Partners
+Luego crearemos el archivo de ambiente para el proyecto, simplemente copiando los contenidos del archivo de ejemplo, de la siguiente manera:
+```shell
+cp .env.example .env
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Por ultimo, vamos a generar una key para nuestro proyecto, con el siguiente comando:
+```shell
+ddev php artisan key:generate
+```
 
-## Contributing
+##Inicialización
+Una vez hecho esto ya habremos finalizado con la configuración podemos iniciar el proyecto y luego abrir el navegador con la URL correespondiente con estos comandos respectivamente:
+```shell
+ddev start
+ddev launch
+```
+Una vez en la index de Laravel <code>[mkdir "nombre"](https://cuatroenlinea.ddev.site)</code>, podemos acceder al juego yendo a la dirección <code>[mkdir "nombre"](https://cuatroenlinea.ddev.site/jugar/{números})</code>. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Una vez se haya dejado de usar el proyecto se puede apagar con:
+```shell
+ddev poweroff
+```
