@@ -48,7 +48,7 @@ Una vez hecho esto ya habremos finalizado con la configuración podemos iniciar 
 ddev start
 ddev launch
 ```
-Una vez en la index de Laravel <code>[mkdir "nombre"](https://cuatroenlinea.ddev.site)</code>, podemos acceder al juego yendo a la dirección <code>[mkdir "nombre"](https://cuatroenlinea.ddev.site/jugar/{números})</code>. 
+Una vez en la index de Laravel <code>(https://cuatroenlinea.ddev.site)</code>, podemos acceder al juego yendo a la dirección <code>https://cuatroenlinea.ddev.site/jugar/{números}</code>. 
 
 Una vez se haya dejado de usar el proyecto se puede apagar con:
 ```shell
