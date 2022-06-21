@@ -42,7 +42,7 @@ Por ultimo, vamos a generar una key para nuestro proyecto, con el siguiente coma
 ddev php artisan key:generate
 ```
 
-##Inicialización
+## Inicialización
 Una vez hecho esto ya habremos finalizado con la configuración podemos iniciar el proyecto y luego abrir el navegador con la URL correespondiente con estos comandos respectivamente:
 ```shell
 ddev start
