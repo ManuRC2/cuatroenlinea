@@ -3,6 +3,7 @@ namespace App;
 
 interface InterfazTablero {
     public function poner_ficha(int $columna, Ficha $ficha);
+    public function get_ficha(int $columna, int $fila);
     public function limpiar();
 }
 
@@ -14,12 +15,12 @@ class Tablero implements InterfazTablero{
 
     public function __construct(int $col = 6, int $fil = 6)
     {
-        if($col <= 4)
+        if($col < 4)
         {
             print("Tamaño invalido");
             $this  -> x = 7;
         }
-        if($fil <= 4)
+        if($fil < 4)
         {
             print("Tamaño invalido");
             $this  -> y = 6;
@@ -33,12 +34,20 @@ class Tablero implements InterfazTablero{
     {
         $fila = $this->altura($columna);
         if ($fila != -1){
-            $this->tablero[$columna][$fila] = $ficha->get_color();
+            $this->tablero[$columna][$fila] = $ficha;
         }
         else
         {
             print("No se puede colocar una ficha en esa columna.");
         }
+    }
+    
+    public function get_ficha(int $columna, int $fila = -1)
+    {
+        if($fila >= $this->y && $fila <= 0){
+            $fila = $this->altura($columna);
+        }
+        return $this->tablero[$columna][$fila];
     }
 
     public function limpiar()
@@ -50,11 +59,12 @@ class Tablero implements InterfazTablero{
         }
     }
 
-    private function altura(int $col){
+    public function altura(int $col)
+    {
         $disponible = -1;
         $fila_actual = 0;
-        while($disponible<0 && $fila_actual <= $this->altura){
-            if($disponible = $this->tablero[$col][$fila_actual] == NULL){
+        while($disponible < 0 && $fila_actual <= $this->y){
+            if($this->tablero[$col][$fila_actual] == NULL){
                 $disponible = $fila_actual;
             }
             $fila_actual++;
