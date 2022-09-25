@@ -24,7 +24,6 @@ class TestTablero extends TestCase
         $tablero = new Tablero($x, $y);
         $tablero->poner_ficha($columna, $ficha);
         $this->assertEquals($ficha, $tablero->get_ficha($columna, $tablero->altura($columna)-1));
-
     }
 
 }

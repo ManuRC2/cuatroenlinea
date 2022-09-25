@@ -12,6 +12,9 @@ class Tablero implements InterfazTablero{
     protected int $x;           // columnas
     protected int $y;           // filas
     protected array $tablero;
+    public int $ult_x;
+    public int $ult_y;
+    public Ficha $ult_ficha;
 
     public function __construct(int $col = 6, int $fil = 6)
     {
@@ -35,6 +38,9 @@ class Tablero implements InterfazTablero{
         $fila = $this->altura($columna);
         if ($fila != -1){
             $this->tablero[$columna][$fila] = $ficha;
+            $this->ult_x = $columna;
+            $this->ult_y = $fila;
+            $this->ult_ficha = $ficha;
         }
         else
         {
