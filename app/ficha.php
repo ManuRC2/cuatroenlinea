@@ -15,7 +15,6 @@ class Ficha implements InterfazFicha {
     {
         $this->color = $color;
     }
-    
     public function get_color(){
         return $this->color;
     }

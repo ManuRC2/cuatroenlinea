@@ -15,7 +15,8 @@ class Ganar{
         while($flag != 0){
             if(is_object($tablero->get_ficha($x, $y)) && $color == $tablero->get_ficha($x, $y)->get_color()){
                 $cont++;
-                $x++; // TODO esto esta a medias
+                $x++; 
+                // TODO esto esta a medias
             }
         }
     }

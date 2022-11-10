@@ -9,8 +9,8 @@ interface InterfazTablero {
 
 class Tablero implements InterfazTablero{
     
-    protected int $x;           // columnas
-    protected int $y;           // filas
+    protected int $x;               // columnas
+    protected int $y;               // filas
     protected array $tablero;
     public int $ult_x;
     public int $ult_y;
